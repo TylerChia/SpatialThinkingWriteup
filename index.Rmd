@@ -11,7 +11,7 @@ output:
 
 ## I: Introduction
 
-Starting in the Spring of 2021 all the way until the present, I have worked as an undergraduate research assistant in the Hegarty Spatial Thinking Lab headed by Professor Hegarty of UCSB's psychology department.  My main tasks were to assist various experiments with their data processing, cleaning, and visualizations.  The majority of my work has been focused on assisting an honors student named Nikita Gupta who graduated in 2021 after completing her honor's thesis for the psychology department.  The main goal of her project was to test the spatial ability and working memory of STEM learners by having them perform various tasks such as the cube comparison and paper folding tasks.  The entirety of her thesis can be found [here](Spatial Ability and Working Memory in STEM Learners (1).pdf)
+Starting in the Spring of 2021 all the way until the present, I have worked as an undergraduate research assistant in the Hegarty Spatial Thinking Lab headed by Professor Hegarty of UCSB's psychology department.  My main tasks were to assist various experiments with their data processing, cleaning, and visualizations.  The majority of my work has been focused on assisting an honors student named Nikita Gupta who graduated in 2021 after completing her honor's thesis for the psychology department.  The main goal of her project was to test the spatial ability and working memory of STEM learners by having them perform various tasks such as the cube comparison and paper folding tasks.  The entirety of her thesis can be found [here](Spatial Ability and Working Memory in STEM Learners (1).pdf).
 
 ******
 
@@ -23,9 +23,13 @@ My first task involved cleaning the data collected by Nickita so that I would la
 ![](cc_scores.png)
 </center>
 
+*****
+
 <center>
 ![](pf_scores.png)
 </center>
+
+*****
 
 After obtaining the scores for both the tasks, I was asked to calculate an overall spatial score from the scores of the two tasks and compare the average spatial score between novies and naives.  In order to do this, I first normalized the scores by calculating the z-scores for all the participants for both tasks.  Then, a spatial score was created by averaging the z-scores for both the tasks.  I then created a column that differentiates between novice and naive and looked at the average spatial score for each group.  The first image below shows the first ten participants' spatial scores along with their z-scores for each task.  The second image shows that novices (STEM learners), had a higher average spatial score in comparison to naives (non-STEM learners).
 
@@ -33,9 +37,13 @@ After obtaining the scores for both the tasks, I was asked to calculate an overa
 ![](spatial_scores.png)
 </center>
 
+*****
+
 <center>
 ![](novice_vs_naive.png)
 </center>
+
+*****
 
 After completing this, I passed the results on to Nickita who was now able to continue with her writeup for her thesis project.
 
@@ -49,25 +57,38 @@ In the following weeks, I was asked to do some analysis of the response times fo
 ![](general_response.png)
 </center>
 
+*****
+
 I then performed further analysis by filtering to only correct answers to see the response times for questions that were answered correctly.  As seen below, the distribution looks similar to that of the general response time histogram.
+
+*****
 
 <center>
 ![](correct_response.png)
 </center>
 
+*****
+
 Next, I wanted to see the mean response times based on the type of rotation task that the participant was shown.  First image shows the general mean response times, while the next two show the mean response times specific to whether or not they are a STEM learner or not.
+
 
 <center>
 ![](condition.png)
 </center>
 
+*****
+
 <center>
 ![](novice_response.png)
 </center>
 
+******
+
 <center>
 ![](naive_response.png)
 </center>
+
+*****
 
 As seen above, Single Swap rotations tend to have the highest average response time.  In addition, novices seem to have a higher average response time in comparison to naives for most types of rotation.  This could be explained by the fact that naives were truly guessing their way through the tasks while the STEM-learners who took organic chemistry were truly trying to figure out the correct answer.
 
@@ -76,5 +97,7 @@ I then ran a mixed linear regression in order to see all the variables, along wi
 <center>
 ![](interactions.png)
 </center>
+
+*****
 
 One thing that I was pretty surprise about was the fact that expertise itself was not statistically significant in determining response time even though I graphically showed that novices have a higher average response time in comparison to naives.  
