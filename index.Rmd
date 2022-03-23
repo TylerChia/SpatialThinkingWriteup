@@ -101,3 +101,75 @@ I then ran a mixed linear regression in order to see all the variables, along wi
 *****
 
 One thing that I was pretty surprise about was the fact that expertise itself was not statistically significant in determining response time even though I graphically showed that novices have a higher average response time in comparison to naives.  
+
+*****
+
+## IV: Update: March 22, 2022
+
+During Winter quarter of my fourth year at UCSB, I was tasked with doing data analysis for another honors thesis student in the psychology department, Mable Zhau.  The topic of her project surrounded way-finding and spatial thinking given a learned route.  In short, her experiment included teaching the participant a "learned route" around family-student housing at UCSB while pointing out several landmarks that the participant should remember such as a statue or a sign.  Next, she had the participant go through 10 different trials which required them to walk from one landmark to the next one stated by Mable.  For example, she would tell them to walk from the statue to the fire hydrant and the gps attached to the participant would track their coordinates to see the route in which they took.  
+
+My first task was read in all 63 gpx files for each participant into a python notebook which was relatively difficult as the data was hard to extract from the gpx files.  It was tedious to get the data into a clean pandas-like format. After reading in each individual file and cleaning it, I was able to concatenate them into a single data frame that contained a row for each coordinate that the gps recorded for each trial for each participant.  In total, the dataset contained over 3000 coordinates/rows.  An example of the data frame can be seen below for the first participant's first trial.
+
+******
+
+<center>
+![](coordinates_df.png)
+</center>
+
+******
+
+As seen above, for this specific participant, 14 coordinates were recorded by the gps machine for the first trial of the experiment.  Each row contains the exact time, latitude, longitude, altitude, participant number, and trial number.  After this was completed, I was asked to calculate the total distance traveled along with the total time elapsed for each trial for each participant.  An example of this data frame for the first participant can be seen below.
+
+******
+
+<center>
+![](dist_time_exam.png)
+</center>
+
+******
+
+Each row contains the participant number, trial number, total time elapsed, and total distance traveled in meters.  Distance was calculated using python's geopy package which allows us to calculate distance between coordinates.  Calculating total distance and time gave Mable a better understanding of how each participant traveled from landmark to landmark.
+
+My next job was to plot each participant's trajectory for each trial.  I went about this by using matplotlib and plotting each trial in its own subplot using standard coordinate scales for each trial.  An example for participant 3 is shown below.
+
+******
+
+<center>
+![](traj_part.png)
+</center>
+
+******
+
+I was then asked to do the same thing but plot all the trials for a single participant on one map, separating each trial by color, while also including points for the landmarks.  In addition, I was asked to plot the learned route over the map.  Example for participant 3:
+
+******
+
+<center>
+![](traj_full.png)
+</center>
+
+******
+
+The last task for plotting that I was presented with was to plot each trial for each participant over an image raster that corresponded to each trial which Mable provided to me.  One image was created for each trial for each participant so in total there are 630 plots.  An example of trial 1 for participant 3 can be seen below.
+
+******
+
+<center>
+![](participant_3_trial1.png)
+</center>
+
+******
+
+Each image specifies the trial number as well as the specific landmarks traveled to and from.  The learned route and shortcut are labeled while the actual route taken is plotted over them.
+
+Finally, I was tasked with calculating shortcut and learned route efficiency by taking the distance traveled the participant for each trial and dividing it by shortcut distance and then learned route distance.  Obviously, this would allow us to see the efficiency that each participant traveled for each trial.  For example, if participant 3's efficiency for the learned route is 2.5, that means this participant traveled 2.5 times the distance of the learned route which is the route that they were originally taught to take.  On the other hand if the shortcut efficiency is 2.5, that means the participant traveled 2.5 times the shortcut distance (route that they were not taught).  An example of participant 3's efficiency for all 10 trials shown below.
+
+******
+
+<center>
+![](efficiency.png)
+</center>
+
+******
+
+Overall this project has been interesting to me as I get to see how different individuals think spatially and how we all navigate differently depending on personality traits or spatial ability.  For example, people with lower spatial ability may stick to the learned route that they were taught instead of attempting to take a shortcut.  In terms of personality traits, someone who is more risk averse may decide not to risk taking a shortcut and follow the learned route instead.  I am interested to see the final report of this thesis and I will update this page with a link once done.
